@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,8 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { SobreComponent } from './sobre/sobre.component';
 import { ContatoComponent } from './contato/contato.component';
 import { CarroselComponent } from './carrosel/carrosel.component';
-import { IagemComponent } from './iagem/iagem.component';
-import { ImagemComponent } from '../assets/imagem/imagem.component';
+import { FormularioComponent } from './formulario/formulario.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +21,12 @@ import { ImagemComponent } from '../assets/imagem/imagem.component';
     SobreComponent,
     ContatoComponent,
     CarroselComponent,
-    IagemComponent,
-    ImagemComponent
+    FormularioComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

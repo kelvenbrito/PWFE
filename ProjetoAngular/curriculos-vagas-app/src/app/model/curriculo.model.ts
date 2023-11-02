@@ -1,4 +1,5 @@
 export class Curriculo {
+ // atributos
 id: number=0;
 nome: string='';
 sobrenome: string='';
@@ -10,6 +11,7 @@ experienciaProfissional: string='';
 habilidades: string='';
 idiomas: string='';
 certificacoes: string='';
+
 constructor(
 id: number,
 nome: string,

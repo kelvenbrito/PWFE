@@ -1,9 +1,30 @@
+// Importa os módulos necessários
 import { Injectable } from '@angular/core';
-
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { Curriculo } from '../model/curriculo.model';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-export class CurriculosService {
-
-  constructor() { }
+export class CurriculoService {
+  private apiUrl = 'http://localhost:3000/curriculos'; // Caminho para o arquivo JSON
+  constructor(private http: HttpClient) {}
+  // Obtém a lista de Curriculos a partir do arquivo JSON
+  getCurriculos(): Observable<Curriculo[]> {
+    return this.http.get<Curriculo[]>(this.apiUrl);
+  }
+  // Cadastra uma nova Curriculo no servidor
+  cadastrarCurriculo(Curriculo: Curriculo): Observable<Curriculo[]> {
+    return this.http.post<Curriculo[]>(this.apiUrl, Curriculo);
+  }
+  // Atualiza uma Curriculo existente no servidor
+  atualizarCurriculo(id: any, curriculo: Curriculo): Observable<Curriculo[]> {
+    const urlAtualizar = `${this.apiUrl}/${id}`;
+    return this.http.put<Curriculo[]>(urlAtualizar, curriculo);
+  }
+  // Remove uma Curriculo do servidor
+  removerCurriculo(id: any): Observable<Curriculo[]> {
+    const urlDeletar = `${this.apiUrl}/${id}`;
+    return this.http.delete<Curriculo[]>(urlDeletar);
+  }
 }

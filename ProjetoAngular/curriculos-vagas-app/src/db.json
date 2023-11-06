@@ -29,5 +29,31 @@
       "salario": "5000"
     }
   ],
-  "curriculos": []
+  "curriculos": [
+    {
+      "id": 1,
+      "nome": "Joao das Neves",
+      "email": "jo@.email.com",
+      "telefone": "93456789",
+      "endereco": "Rua: pedro alcatares; Bairro: Nova Esperança; Nº 432.",
+      "formacaoAcademica": "Ciencias da computação"
+    },
+
+    {
+      "id": 2,
+      "nome": "Maria de cafuntes",
+      "email": "ma@.email.com",
+      "telefone": "96457784",
+      "endereco": "Rua: 7 de setembro; Bairro: Centro; Nº 42.",
+      "formacaoAcademica": "Analise e Desenvolvimento de Sistemad"
+    },
+    {
+      "id": 3,
+      "nome": "Hermanoteu de Godah",
+      "email": "jo@.email.com",
+      "telefone": "93456789",
+      "endereco": "Rua: Volta redonda; Bairro: Pentescopeia; Nº 12.",
+      "formacaoAcademica": "Engenharia da computação"
+    }
+  ]
 }

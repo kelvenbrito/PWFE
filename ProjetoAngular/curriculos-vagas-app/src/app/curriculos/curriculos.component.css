@@ -1,0 +1,9 @@
+.lista-curriculos {
+  display: flex;
+  flex-direction: row;
+}
+
+.lista-curriculos .card {
+  margin: 5px 10px;
+  min-height: 500px;
+}

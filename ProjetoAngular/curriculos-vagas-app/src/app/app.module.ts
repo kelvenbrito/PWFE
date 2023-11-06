@@ -12,6 +12,7 @@ import { FooterComponent } from './basic/footer/footer.component';
 import { HeaderComponent } from './basic/header/header.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PainelVagasComponent } from './painel-vagas/painel-vagas.component';
+import { PainelCurriculosComponent } from './painel-curriculos/painel-curriculos.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PainelVagasComponent } from './painel-vagas/painel-vagas.component';
     VagasComponent,
     FooterComponent,
     HeaderComponent,
-    PainelVagasComponent
+    PainelVagasComponent,
+    PainelCurriculosComponent
   ],
   imports: [
     BrowserModule,

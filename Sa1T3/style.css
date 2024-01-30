@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+body{
+    background-color: aliceblue;
+}
+.predio{
+background-color: rgb(61, 61, 61);
+color: azure;
+width: 100vh;
+height: 100vh;
+margin-left: 50vh;
+text-align: center;
+
+}
+h1{
+    padding: 3vh;
+}
+button{
+    height: 5vh;
+    width: 5vh;
+    font-size: 2vh;
+}
+button .b1{
+
+}

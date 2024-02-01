@@ -3,26 +3,53 @@
     padding: 0;
     text-decoration: none;
 }
-body{
+
+body {
     background-color: aliceblue;
 }
 .predio{
-background-color: rgb(61, 61, 61);
-color: azure;
-width: 100vh;
-height: 100vh;
-margin-left: 50vh;
-text-align: center;
+    background-color: rgb(61, 61, 61);
+    width: 70vh;
+    height: 130vh;
+    margin-left: 50vh;
+}
+.andar {
+   
+    color: azure;
+    width: 10vh;
+    height: 10vh;
+margin-left: 30vh;
+    text-align: center;
+    font-size: 10px;
+    position: relative;
+}
 
+h1 {
+    margin-top: 4vh;
 }
-h1{
-    padding: 3vh;
-}
-button{
-    height: 5vh;
-    width: 5vh;
-    font-size: 2vh;
-}
-button .b1{
 
+button {
+    height: 3vh;
+    width: 3vh;
+    font-size: 1vh;
+    margin-top: 1vh;
+}
+
+.elevador1,
+.elevador2 {
+    background-color: aliceblue;
+    width: 60px;
+    height: 70px;
+  
+    position: absolute;
+    top: 550px;
+}
+
+.elevador1 {
+
+    margin-left: 100px;
+}
+
+.elevador2 {
+    margin-left: 270px;
 }

@@ -4,26 +4,60 @@ document.addEventListener('DOMContentLoaded', function () {
     var predio = document.querySelector('.predio').clientHeight;
 
     const botoes = document.querySelectorAll('.b1');
+    const botoes2 = document.querySelectorAll('.b2');
+
+    const modal = document.getElementById("myModal");
+    const closeButton = document.querySelector(".close");
+    const pred = document.querySelector('.predio');
+
+
 
     botoes.forEach(botao => {
         botao.addEventListener('click', function () {
             const andar = this.parentElement.id;
-            moverElevador(andar);
+            const painel = false; // Define painel como false para botões com a classe b1
+            const elevadorEscolha = false;
+            moverElevador(andar, painel, elevadorEscolha);
         });
     });
 
-    function moverElevador(andar) {
+
+    closeButton.addEventListener('click', function () {
+        modal.style.display = "none";
+        pred.style.opacity = "1"; // Restaura a opacidade do fundo para 1 (totalmente visível)
+        document.body.style.backgroundColor = " #FFFFFF ";
+    });
+
+
+
+    botoes2.forEach(botao => {
+        botao.addEventListener('click', function () {
+            modal.style.display = "none";
+            pred.style.opacity = "1";
+            document.body.style.backgroundColor = "#FFFFFF";
+            const andar = this.id.replace("", ""); // Remove o prefixo "andarb" para obter o número do andar
+            const painel = true;
+            moverElevador(andar, painel);
+        });
+    });
+
+
+    function moverElevador(andar, painel, elevadorEscolha) {
         const posicoes = {
-            'andar1': 450,
-            'andar2': 380,
-            'andar3': 300,
-            'andar4': 180,
-            'andar5': 100,
-            'andar6': 30,
-            'andarT': 550,
-            'andarSA1': 620,
-            'andarSA2': 680
+            '1': 450,
+            '2': 380,
+            '3': 300,
+            '4': 180,
+            '5': 100,
+            '6': 30,
+            'T': 550,
+            'SA1': 620,
+            'SA2': 680
         };
+
+
+
+
 
         const destino = posicoes[andar];
 
@@ -36,11 +70,26 @@ document.addEventListener('DOMContentLoaded', function () {
         const distancia2 = Math.abs(destino - posicaoAtual2);
 
         // Move o elevador mais próximo do destino
-        if (distancia1 < distancia2) {
-            moverElevadorIndividual(elevador1, destino);
-        } else {
-            moverElevadorIndividual(elevador2, destino);
+        if (!elevadorEscolha) {
+            if (distancia1 < distancia2) {
+                moverElevadorIndividual(elevador1, destino);
+            } else {
+                moverElevadorIndividual(elevador2, destino);
+            }
+
         }
+
+        // Após o elevador chegar ao destino, mostra o modal e torna o fundo transparente
+        setTimeout(() => {
+            if (!painel) {
+                // Se não for um botão b2, execute o código para mostrar o modal e tornar o fundo transparente
+                pred.style.opacity = "0"; // Configura a opacidade do fundo para 0.3 (30% transparente)
+                modal.style.display = "block";
+                document.body.style.backgroundColor = "#525252 ";
+                painel = true;
+            }
+
+        }, Math.max(distancia1, distancia2) * 2);
     }
 
     function moverElevadorIndividual(elevador, destino) {
@@ -59,9 +108,5 @@ document.addEventListener('DOMContentLoaded', function () {
         // Move o elevador para o destino
         elevador.style.top = destino + 'px';
 
-        // Limpa as transições após o término da animação
-        setTimeout(() => {
-            elevador.style.transition = 'none';
-        }, parseFloat(duracao));
     }
 });
